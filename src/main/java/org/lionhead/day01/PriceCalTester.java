@@ -1,29 +1,25 @@
 package org.lionhead.day01;
 
 public class PriceCalTester {
+    private PriceCaculator priceCaculator = new PriceCaculator();
 
     // 单元测试函数/方法
-    public static boolean sumTest(){
+    public  boolean testMethodEntry() {
         // 条件 -> case
         // - 正常
         // 调用一个两数之和的函数，返回一个结果
-        boolean result = true;
-        result = PriceCalTester.case1Test();
-        result = PriceCalTester.case2Test();
-        result = PriceCalTester.case3Test();
-
-        return result;
+        return case1Test(priceCaculator) && case2Test(priceCaculator) && case3Test(priceCaculator);
     }
 
-    public static boolean case1Test(){
-        return PriceCaculator.calPriceSum(1,2) == 3;
+    public  boolean case1Test(PriceCaculator priceCaculator) {
+        return priceCaculator.calPriceSum(1, 2) == 3;
     }
 
-    public static boolean case2Test(){
-        return PriceCaculator.calPriceSum(2,5) == 7;
+    public  boolean case2Test(PriceCaculator priceCaculator) {
+        return priceCaculator.calPriceSum(2, 5) == 7;
     }
 
-    public static boolean case3Test(){
-        return PriceCaculator.calPriceSum(-1, 5) == 4;
+    public  boolean case3Test(PriceCaculator priceCaculator) {
+        return priceCaculator.calPriceSum(-1, 5) == 4;
     }
 }

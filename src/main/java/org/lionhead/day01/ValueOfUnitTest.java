@@ -3,8 +3,8 @@ package org.lionhead.day01;
 public class ValueOfUnitTest {
     // 主入口
     public static void main(String[] args) {
-        boolean testResult = PriceCalTester.sumTest();
-        System.out.println(testResult);
+        PriceCalTester priceCalTester = new PriceCalTester();
+        boolean testResult = priceCalTester.testMethodEntry();
 
         if (testResult){
             startAllSystem();
