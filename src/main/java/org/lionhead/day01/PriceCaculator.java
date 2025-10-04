@@ -1,6 +1,7 @@
 package org.lionhead.day01;
 
 public class PriceCaculator {
+    private final ExpressService expressService = new ExpressService();
     /**
      * 计算价格的总和 + 快递费
      * @param priceA 价格 A
@@ -8,9 +9,10 @@ public class PriceCaculator {
      * @return 总和 + 快递费
      */
     public int calTotalPricePlus(int priceA, int priceB) {
+
         int total = calPriceSum(priceA, priceB);
         if (total < 100) {
-            return total + 20;
+            return total + expressService.queryExpressPrice();
         } else {
             return total;
         }

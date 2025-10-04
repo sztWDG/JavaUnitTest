@@ -1,7 +1,7 @@
 package org.lionhead.day01;
 
 public class PriceCalTester {
-    private PriceCaculator priceCaculator = new PriceCaculator();
+    private final PriceCaculator priceCaculator = new PriceCaculator();
 
     // 单元测试函数/方法
     public  boolean testMethodEntry() {
@@ -17,11 +17,9 @@ public class PriceCalTester {
     public  boolean pricePlusTest1(PriceCaculator priceCaculator) {
         return priceCaculator.calTotalPricePlus(10, 20) == 50;
     }
-
     public  boolean pricePlusTest2(PriceCaculator priceCaculator) {
         return priceCaculator.calTotalPricePlus(2, 5) == 27;
     }
-
     public  boolean pricePlusTest3(PriceCaculator priceCaculator) {
         return priceCaculator.calTotalPricePlus(50, 60) == 110;
     }
