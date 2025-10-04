@@ -22,15 +22,15 @@ public class ValueOfUnitTest {
         // 条件 -> case
         // - 正常
         // 调用一个两数之和的函数，返回一个结果
-        return PriceCalculator.calPriceSum(1,2) == 3;
+        return PriceCaculator.calPriceSum(1,2) == 3;
     }
 
     private static boolean case2Test(){
-        return PriceCalculator.calPriceSum(2,5) == 7;
+        return PriceCaculator.calPriceSum(2,5) == 7;
     }
 
     private static boolean case3Test(){
-        return PriceCalculator.calPriceSum(-1, 5) == 4;
+        return PriceCaculator.calPriceSum(-1, 5) == 4;
     }
 
     // 单元测试函数/方法
@@ -47,16 +47,5 @@ public class ValueOfUnitTest {
     }
 
 
-    // 今天进行了升级
-    class PriceCalculator {
-        /**
-         * 计算价格的总和
-         * @param priceA 价格 A
-         * @param priceB 价格 B
-         * @return 两个价格的总和
-         */
-        public static int calPriceSum(int priceA, int priceB) {
-            return priceA + priceB;
-        }
-    }
+
 }
