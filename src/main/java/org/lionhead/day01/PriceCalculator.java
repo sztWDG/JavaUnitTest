@@ -13,14 +13,13 @@ public class PriceCalculator {
      *
      * @param priceA 价格 A
      * @param priceB 价格 B
-     * @param uid
      * @return 总和 + 快递费
      */
-    public int calTotalPricePlus(int priceA, int priceB, String uid) {
+    public int calTotalPricePlus(int priceA, int priceB) {
 
         // 实际上我们只需要折扣的大小，不需要知道 Level
         // UserLevel level = userService.getUserLevelBy(uid);
-        int discount = userService.getUserLevelBy(uid).discount;
+        UserLevel userLevelBy = userService.getUserLevelBy();
 
         int total = calPriceSum(priceA, priceB);
 
@@ -44,7 +43,7 @@ public class PriceCalculator {
 //        } else if (level.equals("Silver")) {
 //            total = total - 5;
 //        }
-        total = total - discount;
+        total = total - userLevelBy.discount;
 
         return total;
     }

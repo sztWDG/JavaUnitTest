@@ -30,26 +30,26 @@ public class PriceCalTester {
         ExpressServiceDouble expressServiceDouble = new ExpressServiceDouble(20,20,20);
         priceCalculator1.expressService = expressServiceDouble;
         expressServiceDouble.spy = new HashMap<>();
-        assert  priceCalculator1.calTotalPricePlus(5, 85, null) == 110 && expressServiceDouble.spy.get("queryExpressPrice") == 1;
+        assert  priceCalculator1.calTotalPricePlus(5, 85) == 110 && expressServiceDouble.spy.get("queryExpressPrice") == 1;
     }
 
 
     public void pricePlusTest1(PriceCalculator priceCalculator) {
-        assert priceCalculator.calTotalPricePlus(10, 20, null) == 50;
+        assert priceCalculator.calTotalPricePlus(10, 20) == 50;
     }
     public void pricePlusTest3(PriceCalculator priceCalculator) {
-        assert priceCalculator.calTotalPricePlus(50, 60, null) == 120;
+        assert priceCalculator.calTotalPricePlus(50, 60) == 120;
     }
 
 
     public void le30(PriceCalculator priceCalculator) {
-        assert priceCalculator.calTotalPricePlus(5,10, null) == 40;
+        assert priceCalculator.calTotalPricePlus(5,10) == 40;
     }
     public void ge100le150(PriceCalculator priceCalculator) {
-        assert priceCalculator.calTotalPricePlus(80,30, null) == 120;
+        assert priceCalculator.calTotalPricePlus(80,30) == 120;
     }
     public void ge150le200(PriceCalculator priceCalculator) {
-        assert priceCalculator.calTotalPricePlus(100, 70, null) == 175;
+        assert priceCalculator.calTotalPricePlus(100, 70) == 175;
     }
 
 
