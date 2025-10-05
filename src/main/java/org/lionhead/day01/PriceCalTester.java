@@ -8,20 +8,33 @@ public class PriceCalTester {
         // 条件 -> case
         // - 正常
         // 调用一个两数之和的函数，返回一个结果
-        boolean priceTestResult = case1Test(priceCaculator) && case2Test(priceCaculator) && case3Test(priceCaculator);
-        boolean pricePlusTestResult =  pricePlusTest1(priceCaculator) && pricePlusTest2(priceCaculator) && pricePlusTest3(priceCaculator);
+        boolean priceTestResult = case1Test(priceCaculator)
+                && case2Test(priceCaculator)
+                && case3Test(priceCaculator);
+        boolean pricePlusTestResult =  pricePlusTest1(priceCaculator)
+                && pricePlusTest3(priceCaculator);
+        boolean newResult = ge100le150(priceCaculator)
+                && ge150le200(priceCaculator)
+                && le30(priceCaculator);
 
-        return priceTestResult && pricePlusTestResult;
+        return priceTestResult && pricePlusTestResult && newResult;
     }
 
     public  boolean pricePlusTest1(PriceCaculator priceCaculator) {
         return priceCaculator.calTotalPricePlus(10, 20) == 50;
     }
-    public  boolean pricePlusTest2(PriceCaculator priceCaculator) {
-        return priceCaculator.calTotalPricePlus(2, 5) == 27;
-    }
     public  boolean pricePlusTest3(PriceCaculator priceCaculator) {
-        return priceCaculator.calTotalPricePlus(50, 60) == 110;
+        return priceCaculator.calTotalPricePlus(50, 60) == 120;
+    }
+
+    public boolean le30(PriceCaculator priceCaculator) {
+        return priceCaculator.calTotalPricePlus(5,10) == 40;
+    }
+    public boolean ge100le150(PriceCaculator priceCaculator) {
+        return priceCaculator.calTotalPricePlus(80,30) == 120;
+    }
+    public boolean ge150le200(PriceCaculator priceCaculator) {
+        return priceCaculator.calTotalPricePlus(100, 70) == 175;
     }
 
 

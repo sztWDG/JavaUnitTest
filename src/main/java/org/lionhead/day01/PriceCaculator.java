@@ -11,6 +11,19 @@ public class PriceCaculator {
     public int calTotalPricePlus(int priceA, int priceB) {
 
         int total = calPriceSum(priceA, priceB);
+
+        if (total < 30) {
+            return total + expressService.queryExpressPrice() + expressService.queryHandFee();
+        }
+
+        if (total > 150 && total < 200) {
+            return total + expressService.queryInsureExpressPrice();
+        }
+
+        if (total > 100 && total < 150) {
+            return total + expressService.queryHalfExpressPrice();
+        }
+
         if (total < 100) {
             return total + expressService.queryExpressPrice();
         } else {
