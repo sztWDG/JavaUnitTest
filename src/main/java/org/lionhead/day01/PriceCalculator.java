@@ -1,7 +1,7 @@
 package org.lionhead.day01;
 
 public class PriceCalculator {
-    private final ExpressService expressService = new ExpressService();
+    public ExpressService expressService = new ExpressService();
     /**
      * 计算价格的总和 + 快递费
      * @param priceA 价格 A

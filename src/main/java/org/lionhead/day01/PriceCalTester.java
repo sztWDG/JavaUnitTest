@@ -23,6 +23,8 @@ public class PriceCalTester {
 
     public boolean unitTestCalTotalPricePlus(PriceCalculator priceCalculator) {
         PriceCalculator priceCalculator1 = new PriceCalculatorDouble(90);
+        ExpressServiceDouble expressServiceDouble = new ExpressServiceDouble(20,1,5);
+        priceCalculator1.expressService = expressServiceDouble;
         return priceCalculator1.calTotalPricePlus(5, 85) == 110;
     }
 
