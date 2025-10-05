@@ -11,11 +11,10 @@ public class PriceCalculatorDouble extends PriceCalculator {
     /**
      * 计算价格的总和
      * 打桩方法 -> Stub Method
-     * @param priceA 价格 A
-     * @param priceB 价格 B
-     * @return 两个价格的总和
+     * @param prices 动态价格
+     * @return 价格总和
      */
-    public int calPriceSum(int priceA, int priceB) {
+    public int calPriceSum(int... prices) {
         return price;
     }
 }
