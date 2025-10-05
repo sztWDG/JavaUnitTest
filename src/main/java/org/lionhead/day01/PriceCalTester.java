@@ -1,5 +1,7 @@
 package org.lionhead.day01;
 
+import java.util.HashMap;
+
 public class PriceCalTester {
     private final PriceCalculator priceCalculator = new PriceCalculator();
 
@@ -25,7 +27,8 @@ public class PriceCalTester {
         PriceCalculator priceCalculator1 = new PriceCalculatorDouble(90);
         ExpressServiceDouble expressServiceDouble = new ExpressServiceDouble(20,1,5);
         priceCalculator1.expressService = expressServiceDouble;
-        return priceCalculator1.calTotalPricePlus(5, 85) == 110;
+        expressServiceDouble.spy = new HashMap<>();
+        return priceCalculator1.calTotalPricePlus(5, 85) == 110 && expressServiceDouble.spy.get("queryExpressPrice") == 1;
     }
 
 
