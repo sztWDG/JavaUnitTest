@@ -1,6 +1,7 @@
 package org.lionhead.day01;
 
 public class PriceCalculatorDouble extends PriceCalculator {
+    public ExpressService expressService = new ExpressService();
 
     private int price;
 
